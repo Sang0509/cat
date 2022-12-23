@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cat.cat.mapper.UserMapper">
+
+    <update id="update">
+        update user
+        <set>
+            <if test="userid != null">
+                userid = #{userid}
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="address != ''">
+                address= #{address},
+            </if>
+            <if test="tel != null">
+                tel= #{tel},
+            </if>
+            <if test="cost != null">
+                cost= #{cost},
+            </if>
+            <if test="gift1 != null">
+                gift1= #{gift1},
+            </if>
+            <if test="gift1_check != null">
+                gift1_check= #{gift1_check},
+            </if>
+            <if test="gift2 != null">
+                gift2= #{gift2},
+            </if>
+            <if test="gift2_check != null">
+                gift2_check= #{gift2_check},
+            </if>
+            <if test="gift3 != null">
+                gift3= #{gift3},
+            </if>
+            <if test="gift3_check != null">
+                gift3_check= #{gift3_check}
+            </if>
+        </set>
+        where id = #{id};
+    </update>
+
+</mapper>
